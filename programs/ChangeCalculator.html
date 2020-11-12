@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!--Change Calculator created by Chris Pajtas on 2/12/2020-->
+
+<!--Description: Project 5A. Determine amount of change given.-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>
+Change Calculator
+</title>
+<link rel="stylesheet" type="text/css" href="../CSS/project5css.css">
+<script src="../Scripts/ChangeCalc.js"></script>
+</head>
+<body>
+<h1> Change Calculator by Chris Pajtas </h1>
+<br><br>
+<p> This program let's the user calculate how much change they need to give. All you need to do is enter a number below and the values will show below.</p>
+<br><br>
+<p>Enter total change to break up (ex. 150.25): <br><b>$</b><input type="number" id="input" 
+min="0" step=".01" onchange="calculateChange()"/></p>
+
+<p>Change Back:</p>
+
+<table>
+<tr>
+<td id="fiftydollars">
+<p class="table" id="FiftyDollars"></p>
+</td>
+</tr>
+<tr>
+<td id="twentydollars">
+<p class="table" id="TwentyDollars"></p>
+</td>
+</tr>
+<tr>
+<td id="tendollars">
+<p class="table" id="TenDollars"></p>
+</td>
+</tr>
+<tr>
+<td id="fivedollars">
+<p class="table" id="FiveDollars"></p>
+</td>
+</tr>
+<tr>
+<td id="dollars">
+<p class="table" id="Dollars"></p>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td id="quarters">
+<p class="table" id="Quarters"></p>
+</td>
+</tr>
+<tr>
+<td id="dimes">
+<p class="table" id="Dimes"></p>
+</td>
+</tr>
+<tr>
+<td id="nickels">
+<p class="table" id="Nickels"></p>
+</td>
+</tr>
+<tr>
+<td id="pennies">
+<p class="table" id="Pennies"></p>
+</td>
+</tr>
+
+</table>
+
+</body>
+</html>

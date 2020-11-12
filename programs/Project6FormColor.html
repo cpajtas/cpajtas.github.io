@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Chris Pajtas on 2/17/2020
+Description: Project 6B. Forms, Input Fields, Buttons, Event Handling.
+-->
+
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../CSS/project6shop.css">
+<script src="../Scripts/project6shop.js"></script>
+<title>Chris Pajtas's Shop - Javascript Forms</title>
+</head>
+<body>
+
+<div class="container">
+<h2> Chris Pajtas's Quick Tech & Deals Shop</h2>
+
+<form id="itemForm">
+<table>
+	<tr>
+	<th> Item </th>
+	<th> Quantity </th>
+	</tr>
+	<tr>
+	<td>Xbox One X ($349.99 each)</td>
+	<td>
+	<input class="items" id="item1" type="text" onmouseover="hoverColor('item1')" onmouseleave="changeColor('item1')" onchange="changeColor('item1')"/></td>
+	</tr>
+	<tr>
+	<td>Xbox One Controller ($49.99 each) </td>
+	<td>
+	<input class="items" id="item2" type="text" onmouseover="hoverColor('item2')" onmouseleave="changeColor('item2')" onchange="changeColor('item2')"/></td>
+	</tr>
+	<tr>
+	<td>EA Sports NHL 20 ($29.99 each) </td>
+	<td>
+	<input class="items" id="item3" type="text" onmouseover="hoverColor('item3')" onmouseleave="changeColor('item3')" onchange="changeColor('item2')"/></td>
+	</tr>
+	<tr>
+	<td class="reset"><input id="resetButton" type="button" value="Reset Cart" onclick="resetCart()"/>
+	</td>
+	<td>
+	<input id="calcButton" type="button" value="Calculate Total" onclick="getTotal()"/>
+	</td>
+	</tr>
+	<tr>
+	<td id="alert" colspan="2">
+	</td>
+	</tr>
+</table>
+</form>
+
+</div>
+
+</body>
+</html>

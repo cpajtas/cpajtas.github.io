@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../CSS/project7.css"/>
+<script src="../Scripts/project7minimart.js"></script>
+<title>
+Chris Pajtas's Mini Mart
+</title>
+</head>
+<body>
+<div class="container"> <!-- container -->
+<h1 class="title"> *** Mini-Mart EMU Online *** </h1>
+<p> Instructions: </p>
+<p> Please enter your item information. </p>
+<p> Click "Add to Cart" to submit your item. </p>
+<p> Click on the Checkout button when you are done. </p>
+<input class="textlong" type="text" placeholder="Item" id="item" />
+<input class="text" type="text" placeholder="Cost" id="cost" />
+<input class="text" type="text" placeholder="Quantity" id="quantity" />
+<input class="button" type="button" onclick="addToCart()" value="Add to Cart"/>
+<input class="button" type= "button" onclick="calculateTotal()" value="Checkout" />
+<p id="alert"></p>
+
+<p id="running"></p>
+<table class="width" id="cart"></table>
+<table class="width" id="total"></table>
+</div>
+</body>
+</html>

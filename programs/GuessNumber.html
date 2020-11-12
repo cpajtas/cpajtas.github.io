@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Change Calculator by Chris Pajtas 2/11/2020 
+
+Computes a random number and has the user guess it.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>
+Guessing Number Game
+</title>
+<script>
+var random = Math.floor((Math.random() * 100)); /*Picks the random number at program 
+start*/
+var name;//=document.getElementById("firstName").value;
+
+function checkUserInput() {
+	if(document.getElementById("number").value > random) {
+		document.getElementById("randomtext").innerHTML = name + " your guess was too high.";
+	}
+	else if(document.getElementById("number").value < random) {
+		document.getElementById("randomtext").innerHTML = name + " your guess was too low.";
+	}
+	else {
+		document.getElementById("randomtext").innerHTML = "Congrats, " + name + " your guess was correct!";
+		random = Math.floor((Math.random() * 100)); 
+	}
+}
+
+function setName() {
+	name = document.getElementById("firstName").value;
+}
+</script>
+</head>
+
+<body>
+<h1>Guess My Number! </h1>
+
+<p>To use this program, you must enter your name and then a number (1-100). 
+If your guess is too low or high, the program will notify you. If you get the
+number correct, the program will congratulate you and calculate a new number.</p>
+<p>Valid numbers are 1-100.</p>
+<br>
+Enter your first name: <input type="text" id="firstName" onchange="setName()"/>
+<br>
+Enter your guess: <input type="number" id="number" min="0" max="100" step="1" 
+onchange="checkUserInput()" />
+<h3 id="randomtext"></h3>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Created by Chris Pajtas on 2/17/2020 
+
+This project shows a moving ball on screen
+that bounces from left to right.
+-->
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<title>Chris Pajtas - Moving Ball</title>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#ball {
+  width: 50px;
+  height: 50px;
+  border-radius:50%;
+  border: 1px solid black;
+  position: absolute;
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="container">
+<div id ="ball"></div>
+</div>
+
+<script>
+
+function myMove() {
+  var elem = document.getElementById("ball");
+  var x = 0;
+  var y = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (y == 700) {
+      clearInterval(id);
+    } else if (y < 350){
+      x++;
+      y++;
+      elem.style.top = x + "px"; 
+      elem.style.left = y/2 + "px"; 
+    } else {
+      x--;
+      y++;
+      elem.style.top = x + "px"; 
+      elem.style.left = y/2 + "px";
+    }
+  }
+}
+</script>
+
+</body>
+</html>

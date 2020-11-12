@@ -1,0 +1,58 @@
+/** Created by Chris Pajtas on 02/17/2020 **/
+
+html, body {
+	background-color:#7F7E7E;
+	color:white;
+}
+
+input.items {
+	border-radius:6px;
+	padding:5px 5px;
+	text-align:center;
+	width: 100%;
+	height: 100%;
+}
+
+td.reset {
+	float:right;
+}
+
+#alert {
+	font-weight:bold;
+	font-size:30px;
+	text-align:center;
+	background-color:grey;
+	border-radius:8px;
+}
+
+#resetButton, #calcButton {
+	border: none;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size:12px;
+	border-radius: 8px;
+}
+
+#resetButton {
+	background-color:red;
+	transition-duration:.5s;
+}
+
+#resetButton:hover {
+	background-color:pink;
+	color:black;
+}
+
+#calcButton {
+	background-color:green;
+	transition-duration:.5s;
+	width:100%;
+}
+
+#calcButton:hover {
+	background-color:lightgreen;
+	color:black;
+}
