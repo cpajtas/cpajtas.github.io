@@ -233,14 +233,14 @@
 			background-color:#B7D7BD;
 		}
 		
-		.collapsible:after {
+		.activec, .collapsible:after {
 			content: '\02795'; /* Unicode character for "plus" sign (+) */
 			color: white;
 			float: right;
 			margin-left: 5px;
 		}
 
-		.active:after {
+		.activec:after {
 			content: "\2796"; /* Unicode character for "minus" sign (-) */
 		}
 		
