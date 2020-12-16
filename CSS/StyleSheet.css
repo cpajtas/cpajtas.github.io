@@ -2,8 +2,8 @@
 		
 		/* Used for the Body */
 		body.main {
-			background-color:#64697C;
-			color:#FFFFFF;
+			background-color:#DFE7E0;
+			color:#000000;
 		}
 		
 		/* From here to next comment is for headers and about me
@@ -20,7 +20,7 @@
 		p.headerName {
 			text-align:center;
 			font-family: Arial, Helvetica, sans-serif;
-			color:#DCD3BE;
+			color:#A1B2A4;
 			font-size:30px;
 			font-weight:bold;
 		}
@@ -128,20 +128,21 @@
 		
 		ul.topnav {
 			list-style-type:none;
-			background-color: #000000;
+			background-color: #A1B2A4;
 			overflow:hidden;
-			position:fixed;
-			top: 0px;
-			height:50px;
+			position:sticky;
+			display:floating;
+		    height:58px;
 			width:100%;
 			margin:0;
 			padding:0;
+			
 		}
 		
 		div.body {
-			padding:20px;
 			margin-top:30px;
 			height:auto;
+			width:100%;
 		}
 		
 		li.aboutfloatright {
@@ -154,50 +155,52 @@
 		li.allli {
 			float: left;
 			display: block;
-			padding: 8px;
-			background-color: #000000;
+			background-color: #A1B2A4;
 		}
 
 		a.notselected {
 			display: block;
-			padding: 8px;
-			background-color: #000000;
+			padding: 20px;
+			color: white;
+			background-color: #A1B2A4;
 		}
 		
 		.topnav a:hover {
-			background-color: #DCD3BE;
+			background-color: #B7D7BD;
 			color:black;
 		}
 		
-		.topnav a.active {
-			background-color: #64697C;
+		.topnav a:active {
+			background-color: #B7C6BA;
 			color:white;
+
 		}
 		
 		.topnav a {
 			float:left;
-			color: #f2f2f2;
+			color: white;
 			text-align:center;
-			padding:14px 16px;
 			text-decoration:none;
 			font-size: 17px;
+			height:58px;
+			
 		}
 
 		.active {
-			background-color: #64697C;
+			background-color: #B7C6BA;
 			display:block;
 			color:white;
+			padding:20px;
 			text-align: center;
-			padding: 14px 16px;
 			text-decoration:none;
 		}
 		
 		a:link {
-			color:#DCD3BE;
+			color:white;
 		}
 		
 		a:visited {
-		    color:#DCD3BE;
+		    color:white;
 		}
 		
 		a:hover {
@@ -206,5 +209,27 @@
 		
 		a:active {
 			color: #DCD3BE;
+		} 
+		
+		.collapsible {
+			width:100%;
+			height: 58px;
+			text-align:left;
+			background-color:#A1B2A4;
+			cursor:pointer;
+			padding:18px;
+			color:white;
 		}
+		
+		.collapsible:hover {
+			background-color:#B7D7BD;
+		}
+		
+		.content {
+			padding: 0 18px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+		}
+	
 		

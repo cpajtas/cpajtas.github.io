@@ -13,41 +13,58 @@
 
 <body class="main">
 
+<div class="body">
+<p class="headerName"> Chris Pajtas • Student and Developer</p>
+
 <ul class="topnav">
 <li class="allli"><a class="notselected" href=".." >Home</a></li>
-<li class="aboutfloatright"><a class="notselected" href="Project4AboutMeTables.html" >About Me</a></li>
 <li class="allli"><a class="active" href="." >Programs</a></li>
+<li class="allli"><a class="notselected" href="Project4AboutMeTables.html" >About Me</a></li>
 </ul>
 
-<div class="body">
-<p class="headerTitle"> Programs and Projects</p>
-<p class="headerName"> Chris Pajtas </p>
-
-<hr class="bar">
-
-
-<div class="center"><img class="size" src="../images/me.jpg" alt="Picture of Me" width="200"></div>
+<!--<hr class="bar">-->
 
 <br>
-<h3 class="projectTitle">COSC231</h3>
-<ul>
-<li><a href=".." >Project 1 (Home Page)</a></li>
-<li><a href="AboutMeChrisPajtasP2.html" >Project 2 (About Me)</a></li>
-<li><a href="AboutMeChrisPajtasP3.html" >Project 3 (About Me w/ Internal Styles and Tables)</a></li>
-<li><a href="Project4AboutMeTables.html">Project 4 About Me w/ Tables and NavBar</a></li>
-<li><a href="GuessNumber.html">Project 5 Number Guessing Game</a></li>
-<li><a href="ChangeCalculator.html">Project 5 Change Calculator</a></li>
-<li><a href="Project6MovingBall.html">Project 6 Moving Ball</a></li>
-<li><a href="Project6FormColor.html">Project 6 Form JS and Styling</a></li>
-<li><a href="MiniMartProject7.html">Project 7 Mini Mart</a></li>
-<li><a href="MiniMartProject8.html">Project 8 Mini Mart - Objects</a></li>
-<li><a href="SpellingNumbersProject9A.php">Project 9 PHP Spelling Numbers Part A (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
-<li><a href="ReverseStringProject9B.php">Project 9 PHP Reverse String Part B (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
-<li><a href="Project10TaxCalcA.php">Project 10 PHP Tax Calculator Part A (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
-<li><a href="Project10PalindromePartB.php">Project 10 PHP Tax Calculator Part B (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
-<li><a href="https://studio.code.org/projects/applab/ojKIVWJdwdtxELcm1MTb-WS3D38XWo6t5yFr9nL-jSQ">Project 11 App Lab Drum Kit</a></li>
-<li><a href="https://studio.code.org/projects/applab/LoHvEtwInT35NTtTs0DTfbq2FpXrSHuCZN4J-fr68Es">Project 12 2020 Year in Review</a></li>
+
+ <button type="button" class="collapsible">COSC231</button>
+<div class="content">
+  <p>
+	<ul>
+		<li><a href="AboutMeChrisPajtasP3.html" >About Me w/ Internal Styles and Tables</a></li>
+		<li><a href="Project4AboutMeTables.html">About Me w/ Tables and NavBar</a></li>
+		<li><a href="GuessNumber.html">Number Guessing Game</a></li>
+		<li><a href="ChangeCalculator.html">Change Calculator</a></li>
+		<li><a href="Project6MovingBall.html">Moving Ball</a></li>
+		<li><a href="Project6FormColor.html">Form JS and Styling</a></li>
+		<li><a href="MiniMartProject7.html">Mini Mart</a></li>
+		<li><a href="MiniMartProject8.html">Mini Mart - Objects</a></li>
+		<li><a href="SpellingNumbersProject9A.php">Project 9 PHP Spelling Numbers Part A (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
+		<li><a href="ReverseStringProject9B.php">Project 9 PHP Reverse String Part B (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
+		<li><a href="Project10TaxCalcA.php">Project 10 PHP Tax Calculator Part A (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
+		<li><a href="Project10PalindromePartB.php">Project 10 PHP Tax Calculator Part B (MUST DOWNLOAD AND OPEN IN A SERVER TO RUN)</a></li>
+		<li><a href="https://studio.code.org/projects/applab/ojKIVWJdwdtxELcm1MTb-WS3D38XWo6t5yFr9nL-jSQ">Project 11 App Lab Drum Kit</a></li>
+		<li><a href="https://studio.code.org/projects/applab/LoHvEtwInT35NTtTs0DTfbq2FpXrSHuCZN4J-fr68Es">Project 12 2020 Year in Review</a></li>
 </ul>
+  </p>
+</div> 
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
 <br>
 <footer>
 <hr class="bar">
