@@ -163,6 +163,11 @@
 			padding: 20px;
 			color: white;
 			background-color: #A1B2A4;
+			text-decoration:none;
+		}
+		
+		a.notselected:visited {
+			color:white;
 		}
 		
 		.topnav a:hover {
@@ -176,7 +181,7 @@
 
 		}
 		
-		.topnav a {
+		.topnav topnav:visited a:visited{
 			float:left;
 			color: white;
 			text-align:center;
@@ -186,25 +191,28 @@
 			
 		}
 
-		.active {
+		.active{
 			background-color: #B7C6BA;
 			display:block;
-			color:white;
 			padding:20px;
 			text-align: center;
 			text-decoration:none;
 		}
 		
-		a:link {
+		.active:visited {
 			color:white;
 		}
 		
+		a:link {
+			color:black;
+		}
+		
 		a:visited {
-		    color:white;
+		    color:#A1B2A4;
 		}
 		
 		a:hover {
-			color: lightgray;
+			color: #9BC9A3;
 		}
 		
 		a:active {
@@ -219,6 +227,7 @@
 			cursor:pointer;
 			padding:18px;
 			color:white;
+			border:5px;
 		}
 		
 		.collapsible:hover {
