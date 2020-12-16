@@ -14,9 +14,11 @@
 <body class="main">
 
 <div class="body">
+<div class="header">
 <p class="headerName"> Chris Pajtas • Student and Developer</p>
+</div>
 
-<div>
+<div class="nav">
 <ul class="topnav">
 <li class="allli"><a class="notselected" href=".." >Home</a></li>
 <li class="allli"><a class="active" href="." >Programs</a></li>
@@ -25,10 +27,10 @@
 </div>
 
 <!--<hr class="bar">-->
-
+<div class="restofpage">
 <br>
 
- <button type="button" class="collapsible">COSC231</button>
+<button type="button" class="collapsible">COSC231</button>
 <div class="content">
   <p>
 	<ul>
@@ -48,6 +50,12 @@
 		<li><a href="https://studio.code.org/projects/applab/LoHvEtwInT35NTtTs0DTfbq2FpXrSHuCZN4J-fr68Es">Project 12 2020 Year in Review</a></li>
 </ul>
   </p>
+</div>
+<br>
+<button type="button" class="collapsible">Side Projects</button>
+<div class="content">
+	Nothing here yet. I am working on some though :)
+</div>
 </div> 
 
 <script>
@@ -60,8 +68,10 @@ for (i = 0; i < coll.length; i++) {
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+	  content.style.border = "0px";
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
+	  content.style.border = "2px solid #A1B2A4";
     } 
   });
 }
