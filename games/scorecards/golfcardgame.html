@@ -33,32 +33,57 @@ function setScoreboard() {
 	var players = document.getElementById("player_id").value;
 	var rounds = getNumRounds();
 	
-	document.getElementById('scorecard').innerHTML = "";
+	var tabl = document.getElementById('scorecard');
+	
+	tabl.innerHTML = "";
 	
 	// players is columns + 1
 	// rounds is rows + 1
 	
-	var table = document.getElementByID('scorecard');
-	var row = table.insertRow(0);
-	
-	
-	
 	// create first row for names (1st row)
-	table.innerHTML += "<tr><td></td>";
+	var row = tabl.insertRow(0);
+	var cel = row.insertCell(0);
 	
-	// adds player names into table (1st row)
+	
+		// adds player names into table (1st row)	
 	for (var j=1; j<=players;j++) {
-			table.innerHTML += "<td><input type='text' name='player"+j+"' value='player"+j+ "'</input> </td>"
-		}
-		
-	for (var i=1; i<= rounds; i++) {
-		table.innerHTML += "<tr><td>"+i+"</td>";
-		for (var j=1; j<=players;j++) {
-			table.innerHTML += "<td><input id='score' type='number' name='player"+j + "_round"+i+"' value='0'></input></td> "
-		}
-		table.innerHTML += "</tr>";
+		cel = row.insertCell(j);
+		cel.innerHTML = "<input type='test' value='player"+j+"'></input>"
 	}
 
+	for (var i=1; i<= rounds; i++) {
+		row = tabl.insertRow(i);
+		cel = row.insertCell(0);
+		cel.innerHTML += i;
+		for (var j=1; j<=players;j++) {
+			cel = row.insertCell(j);
+			cel.innerHTML = "<input id='score' type='number' name='player"+j + "_round"+i+"' value='0'></input>";
+		}
+	}
+
+}
+
+function disableSettings() {
+	var t = document.getElementsByName('rounds');
+	var pid = document.getElementById('player_id');
+	var othr = document.getElementById('other_rounds');
+	var lockcheck = document.getElementById('lock');
+	
+	if (lockcheck.checked == true) {
+		pid.disabled = true;
+		othr.disabled = true;
+	} else {
+		pid.disabled = false;
+		othr.disabled = false;
+	}
+	
+	for (var i=0; i<t.length; i++) {
+		if (lockcheck.checked == true) {
+			t[i].disabled = true;
+		} else {
+			t[i].disabled = false;
+		}
+	}
 }
 </script>
 </head>
@@ -69,8 +94,9 @@ function setScoreboard() {
 
 <ul class="topnav">
 <li class="allli"><a class="notselected" href="../../index.html" >Home</a></li>
-<li class="allli"><a class="notselected" href="../programs/index.html" >Programs</a></li>
+<li class="allli"><a class="notselected" href="../../programs/index.html" >Programs</a></li>
 <li class="dropdown">
+<!-- not working currently (supposed to be dropdown)-->
 <a class="droplist" href="#" >Games</a>
 <div class="dropdown-content">
 	<a href="#">Scorecards</a>
@@ -78,7 +104,8 @@ function setScoreboard() {
 	<a href="#">test2</a>
 </div>
 </li>
-<li class="allli"><a class="notselected" href="programs/aboutme.html" >About Me</a></li>
+<li class="allli"><a class="active" href="." >Golf Scorecard</a></li>
+<li class="allli"><a class="notselected" href="../../programs/aboutme.html" >About Me</a></li>
 <!-- make a disable checkbox to prevent changes -->
 </ul>
 <br>
@@ -89,7 +116,7 @@ function setScoreboard() {
 
 <div>
 Number of Players:
-<input type="number" id="player_id" onchange="setScoreboard()" name="num_players" min="2" value="2"></input>
+<input type="number" id="player_id" onchange="setScoreboard()" name="num_players" min="2" value="2" ></input>
 
 <br>
 <div>
@@ -98,9 +125,11 @@ Number of Rounds:
 <input type="radio" onchange="setScoreboard()"  id="eighteen" name="rounds" value="18"> 18 </input>
 <input type="radio" onchange="setScoreboard()"  id="other" name="rounds" value="other"> Other </input>
 <input type="number" onchange="setScoreboard()"  id="other_rounds" value="1" min="1" ></input>
+<input id="lock" type="checkbox" onclick="disableSettings()">Lock Settings</input>
 <!-- if other show number text box !-->
 <table border="solid black 2px" id="scorecard">
 </table>
+<!-- need to add total -->
 
 </div>
 
