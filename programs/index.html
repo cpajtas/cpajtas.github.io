@@ -14,20 +14,32 @@
 <body class="main">
 
 <div class="body">
+<div class="header">
 <p class="headerName"> Chris Pajtas • Student and Developer</p>
+</div>
 
+<div class="nav">
 <ul class="topnav">
 <li class="allli"><a class="notselected" href=".." >Home</a></li>
 <li class="allli"><a class="active" href="." >Programs</a></li>
-<li class="allli"><a class="notselected" href="games/scorecards/golfcardgame.html" >Games</a></li>
+<!-- not working currently (supposed to be dropdown)-->
+<a class="droplist" href="#" >Games</a>
+<div class="dropdown-content">
+	<a href="#">Scorecards</a>
+	<a href="#">test1</a>
+	<a href="#">test2</a>
+</div>
+</li>
+<li class="allli"><a class="notselected" href="../games/scorecards/golfcardgame.html" >Golf Scorecard</a></li>
 <li class="allli"><a class="notselected" href="aboutme.html" >About Me</a></li>
 </ul>
+</div>
 
 <!--<hr class="bar">-->
-
+<div class="restofpage">
 <br>
 
- <button type="button" class="collapsible">COSC231</button>
+<button type="button" class="collapsible">COSC231</button>
 <div class="content">
   <p>
 	<ul>
@@ -47,6 +59,12 @@
 		<li><a href="https://studio.code.org/projects/applab/LoHvEtwInT35NTtTs0DTfbq2FpXrSHuCZN4J-fr68Es">Project 12 2020 Year in Review</a></li>
 </ul>
   </p>
+</div>
+<br>
+<button type="button" class="collapsible">Side Projects</button>
+<div class="content">
+	Nothing here yet. I am working on some though :)
+</div>
 </div> 
 
 <script>
@@ -55,12 +73,14 @@ var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
+    this.classList.toggle("activec");
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+	  content.style.border = "0px";
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
+	  content.style.border = "2px solid #A1B2A4";
     } 
   });
 }
