@@ -5,6 +5,7 @@
 
 <!-- Created by Chris Pajtas on Jan 3 2021-->
 
+<!-- add description and instructions for play -->
 <head>
 	<meta charset="UTF-8">
 	<title> Chris's Webpage </title>
@@ -32,15 +33,32 @@ function setScoreboard() {
 	var players = document.getElementById("player_id").value;
 	var rounds = getNumRounds();
 	
+	document.getElementById('scorecard').innerHTML = "";
+	
 	// players is columns + 1
 	// rounds is rows + 1
 	
-	for (var i=1; i<= rounds; i++) {
-		
-		for (var j=1; j<=players;j++) {
-		
+	var table = document.getElementByID('scorecard');
+	var row = table.insertRow(0);
+	
+	
+	
+	// create first row for names (1st row)
+	table.innerHTML += "<tr><td></td>";
+	
+	// adds player names into table (1st row)
+	for (var j=1; j<=players;j++) {
+			table.innerHTML += "<td><input type='text' name='player"+j+"' value='player"+j+ "'</input> </td>"
 		}
+		
+	for (var i=1; i<= rounds; i++) {
+		table.innerHTML += "<tr><td>"+i+"</td>";
+		for (var j=1; j<=players;j++) {
+			table.innerHTML += "<td><input id='score' type='number' name='player"+j + "_round"+i+"' value='0'></input></td> "
+		}
+		table.innerHTML += "</tr>";
 	}
+
 }
 </script>
 </head>
@@ -61,6 +79,7 @@ function setScoreboard() {
 </div>
 </li>
 <li class="allli"><a class="notselected" href="programs/aboutme.html" >About Me</a></li>
+<!-- make a disable checkbox to prevent changes -->
 </ul>
 <br>
 
@@ -80,8 +99,7 @@ Number of Rounds:
 <input type="radio" onchange="setScoreboard()"  id="other" name="rounds" value="other"> Other </input>
 <input type="number" onchange="setScoreboard()"  id="other_rounds" value="1" min="1" ></input>
 <!-- if other show number text box !-->
-<table>
-<p id="demo"></p>
+<table border="solid black 2px" id="scorecard">
 </table>
 
 </div>
