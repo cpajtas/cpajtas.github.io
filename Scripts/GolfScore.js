@@ -46,7 +46,7 @@ function setScoreboard() {
 		for (var j=1; j<=players;j++) {
 			var player = "player"+j;
 			cel = row.insertCell(j);
-			cel.innerHTML = "<input class='round_score' min='-60' max='60' onchange='calculateScore(\""+player+"\")' type='number' name='"+player+"_score' value='0'></input>";
+			cel.innerHTML = "<input class='round_score' min='-60' max='60' pattern='\d*' onchange='calculateScore(\""+player+"\")' type='number' name='"+player+"_score' value='0'></input>";
 		}
 	}
 	
