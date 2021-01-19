@@ -35,7 +35,7 @@ function setScoreboard() {
 		// adds player names into table (1st row)	
 	for (var j=1; j<=players;j++) {
 		cel = row.insertCell(j);
-		cel.innerHTML = "<input type='test' value='player"+j+"'></input>"
+		cel.innerHTML = "<input class='player_name' type='test' value='player"+j+"'></input>"
 	}
 
 	// adds input for score
@@ -46,7 +46,7 @@ function setScoreboard() {
 		for (var j=1; j<=players;j++) {
 			var player = "player"+j;
 			cel = row.insertCell(j);
-			cel.innerHTML = "<input onchange='calculateScore(\""+player+"\")' type='number' name='"+player+"_score' value='0'></input>";
+			cel.innerHTML = "<input class='round_score' onchange='calculateScore(\""+player+"\")' type='number' name='"+player+"_score' value='0'></input>";
 		}
 	}
 	
@@ -56,7 +56,7 @@ function setScoreboard() {
 	cel.innerHTML = "<b>Total</b>";
 	for (var i=1;i<=players;i++) {
 		cel = row.insertCell(i);
-		cel.innerHTML = "<input  type='number' id='player"+i+"_total' value='0' readonly></input>";
+		cel.innerHTML = "<input class='round_score' type='number' id='player"+i+"_total' value='0' readonly></input>";
 	}
 	
 	
