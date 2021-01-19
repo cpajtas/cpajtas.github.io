@@ -42,11 +42,11 @@ function setScoreboard() {
 	for (var i=1; i<= rounds; i++) {
 		row = tabl.insertRow(i);
 		cel = row.insertCell(0);
-		cel.innerHTML = i;
+		cel.innerHTML = "<center><b>" + i + "</b></center>";
 		for (var j=1; j<=players;j++) {
 			var player = "player"+j;
 			cel = row.insertCell(j);
-			cel.innerHTML = "<input class='round_score' onchange='calculateScore(\""+player+"\")' type='number' name='"+player+"_score' value='0'></input>";
+			cel.innerHTML = "<input class='round_score' min='-60' max='60' onchange='calculateScore(\""+player+"\")' type='number' name='"+player+"_score' value='0'></input>";
 		}
 	}
 	

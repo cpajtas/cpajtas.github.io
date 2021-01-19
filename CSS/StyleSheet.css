@@ -5,6 +5,11 @@
 			background-color:#DFE7E0;
 			color:#000000;
 		}
+		/* page div */
+		.page_fit {
+			width:auto;
+			height:auto;
+		}
 		
 		/* From here to next comment is for headers and about me
 		paragraph titles */
@@ -308,13 +313,13 @@
 		/* Golf Scorecard CSS */
 		.round_score {
 			width:50px;
-			height:50px;
+			height:25px;
 			font-size:20px;
 		}
 		.player_name {
 			font-size:auto;
 			width:50px;
-			height:50px;
+			height:25px;
 		}
 		
 		.score_table {
