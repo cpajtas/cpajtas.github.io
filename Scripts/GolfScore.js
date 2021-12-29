@@ -16,6 +16,12 @@ function getNumRounds() {
 	}
 }
 
+// Player nametags used to label who deals for each round
+function labelDealers() {
+	var txt = document.getElementById("player"+j+"NameTag").innerHTML;
+	console.log(txt);
+}
+
 function setScoreboard() {
 	var players = document.getElementById("player_id").value;
 	var rounds = parseInt(getNumRounds());
@@ -35,11 +41,22 @@ function setScoreboard() {
 		// adds player names into table (1st row)	
 	for (var j=1; j<=players;j++) {
 		cel = row.insertCell(j);
-		cel.innerHTML = "<input class='player_name' type='test' value='player"+j+"'></input>"
+		cel.innerHTML = "<input class='player_name' onChange='labelDealers("+j+")' id='player"+j+"NameTag' type='test' value='player"+j+"'></input>"
 	}
+	
+	
 
 	// adds input for score
 	for (var i=1; i<= rounds; i++) {
+		// adds total
+	row = tabl.insertRow(rounds+1);
+	cel = row.insertCell(0);
+	cel.innerHTML = "<b>Total</b>";
+	for (var i=1;i<=players;i++) {
+		cel = row.insertCell(i);
+		cel.innerHTML = "<input class='round_score' type='number' id='player"+i+"_total' value='0' readonly></input>";
+	}
+		
 		row = tabl.insertRow(i);
 		cel = row.insertCell(0);
 		cel.innerHTML = "<center><b>" + i + "</b></center>";
@@ -49,16 +66,6 @@ function setScoreboard() {
 			cel.innerHTML = "<input class='round_score' min='-60' max='60' pattern='\d*' onchange='calculateScore(\""+player+"\")' type='number' name='"+player+"_score' value='0'></input>";
 		}
 	}
-	
-	// adds total
-	row = tabl.insertRow(rounds+1);
-	cel = row.insertCell(0);
-	cel.innerHTML = "<b>Total</b>";
-	for (var i=1;i<=players;i++) {
-		cel = row.insertCell(i);
-		cel.innerHTML = "<input class='round_score' type='number' id='player"+i+"_total' value='0' readonly></input>";
-	}
-	
 	
 
 }
